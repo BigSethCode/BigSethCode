@@ -40,6 +40,7 @@ total_seconds=$((total_days * 86400))
 random_number=$(jot -r 1 0 1000)
 
 # Contenu mis à jour
+
 output="👋 Salut, je suis @BigSethCode
                                         
 👀 Je suis intéressé par le DevOps, la programmation en Python et le C basique. J'aime aussi la robotique.
