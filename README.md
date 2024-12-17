@@ -14,6 +14,6 @@ Soit :
 **12454560 minutes**  
 **747273600 secondes**
 
-🎲 **Chiffre aléatoire du jour : 839**
+🎲 **Chiffre aléatoire du jour : 483**
 
 
