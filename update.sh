@@ -68,6 +68,7 @@ Soit :
 # echo "$output" > bio.md
 echo "$output" > README.md
 
+echo "Date info ${current_date} "
 echo "Bio mise à jour avec succès dans bio.md."
 
 cd /Users/iamroot/Documents/work/BigSethCode
