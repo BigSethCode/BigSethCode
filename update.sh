@@ -41,18 +41,6 @@ random_number=$(jot -r 1 0 1000)
 
 # Contenu mis à jour
 output="👋 Salut, je suis @BigSethCode
-
-
-  /$$$$$$              /$$     /$$      
- /$$__  $$            | $$    | $$      
-| $$  \__/  /$$$$$$  /$$$$$$  | $$$$$$$ 
-|  $$$$$$  /$$__  $$|_  $$_/  | $$__  $$
- \____  $$| $$$$$$$$  | $$    | $$  \ $$
- /$$  \ $$| $$_____/  | $$ /$$| $$  | $$
-|  $$$$$$/|  $$$$$$$  |  $$$$/| $$  | $$
- \______/  \_______/   \___/  |__/  |__/
-                                        
-                                        
                                         
 👀 Je suis intéressé par le DevOps, la programmation en Python et le C basique. J'aime aussi la robotique.
 
