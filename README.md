@@ -18,6 +18,6 @@ Soit :
 **12457440 minutes**  
 **747446400 secondes**
 
-🎲 **Chiffre aléatoire du jour : 947**
+🎲 **Chiffre aléatoire du jour : 77**
 
 
