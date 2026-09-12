@@ -10,14 +10,14 @@
 
 Je suis né le 13 avril 2001 et Aujourd'hui j'ai exactement :
 
-**23 ans, 8 mois et 6 jours.**
+**25 ans, 5 mois et 0 jours.**
 
 Soit :
 
-**8651 jours**  
-**12457440 minutes**  
-**747446400 secondes**
+**9284 jours**  
+**13368960 minutes**  
+**802137600 secondes**
 
-🎲 **Chiffre aléatoire du jour : 77**
+🎲 **Chiffre aléatoire du jour : 795**
 
 
