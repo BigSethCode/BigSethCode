@@ -8,18 +8,8 @@
 
 💞️ Je cherche à collaborer sur (Humm)...
 
-Je suis né le 13 avril 2001 et Aujourd'hui j'ai exactement :
+📚 **Le mot du jour**
 
-**25 ans, 5 mois et 0 jours.**
-
-Soit :
-
-**9284 jours**  
-**13368960 minutes**  
-**802137600 secondes**
-
-🧠 **Le saviez-vous ?**
-
-> La France compte 12 fuseaux horaires, un record mondial.
+> « Ce qui se conçoit bien s'énonce clairement. — Nicolas Boileau »
 
 
