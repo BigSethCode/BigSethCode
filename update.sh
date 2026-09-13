@@ -9,6 +9,8 @@ birth_date="2001-04-13"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
+DATA_DIR="$SCRIPT_DIR/data"
+
 # Date actuelle (10# évite l'interprétation octale de "08"/"09")
 current_date=$(date +"%Y-%m-%d")
 current_year=$(date +"%Y")
@@ -72,19 +74,45 @@ total_days=$(( (current_epoch - birth_epoch) / 86400 ))
 total_minutes=$((total_days * 1440))
 total_seconds=$((total_days * 86400))
 
-# Génération d'un chiffre aléatoire entre 0 et 1000
-case "$(uname -s)" in
-  Darwin)
-    random_number=$(jot -r 1 0 1000)
-    ;;
-  *)
-    if command -v shuf >/dev/null 2>&1; then
-      random_number=$(shuf -i 0-1000 -n 1)
-    else
-      random_number=$((RANDOM % 1001))
-    fi
-    ;;
-esac
+# Choisit une ligne au hasard dans un fichier (portable, sans shuf)
+pick_line() {
+  local file="$1"
+  local line
+  local lines=()
+
+  if [ ! -f "$file" ]; then
+    echo ""
+    return 0
+  fi
+
+  while IFS= read -r line; do
+    [ -n "$line" ] && lines+=("$line")
+  done < "$file"
+
+  if [ "${#lines[@]}" -eq 0 ]; then
+    echo ""
+    return 0
+  fi
+
+  printf '%s\n' "${lines[$((RANDOM % ${#lines[@]}))]}"
+}
+
+# Tirage aléatoire : une citation ou un fait du jour
+if (( RANDOM % 2 == 0 )); then
+  selected="$(pick_line "$DATA_DIR/citations_fr.txt")"
+  quote_title="📚 **Le mot du jour**"
+  quote_text="« ${selected} »"
+else
+  selected="$(pick_line "$DATA_DIR/faits_fr.txt")"
+  quote_title="🧠 **Le saviez-vous ?**"
+  quote_text="${selected}"
+fi
+
+# Repli si les listes sont vides ou absentes
+if [ -z "$selected" ]; then
+  quote_title="🧠 **Le saviez-vous ?**"
+  quote_text="Il reste toujours quelque chose à apprendre."
+fi
 
 # Contenu mis à jour
 output="👋 Salut, je suis @BigSethCode
@@ -107,7 +135,9 @@ Soit :
 **${total_minutes} minutes**  
 **${total_seconds} secondes**
 
-🎲 **Chiffre aléatoire du jour : ${random_number}**
+${quote_title}
+
+> ${quote_text}
 
 "
 
@@ -127,7 +157,7 @@ git add -A
 if git diff --cached --quiet; then
   echo "Aucun changement à committer."
 else
-  git commit -m "Update: Date  No : ${random_number}"
+  git commit -m "Update: Bio ${current_date}"
   git push origin main
   echo "Bio mise à jour avec succès dans Git"
 fi
