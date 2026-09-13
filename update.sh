@@ -85,6 +85,22 @@ if git diff --cached --quiet; then
   echo "Aucun changement à committer."
 else
   git commit -m "Update: Bio ${current_date}"
-  git push origin main
+fi
+
+# Pousse s'il reste des commits locaux non publiés
+# (résiste à un push précédent échoué, ex. panne DNS)
+if [ -n "$(git log origin/main..HEAD --oneline 2>/dev/null)" ]; then
+  attempt=1
+  until git push origin main; do
+    if [ "$attempt" -ge 3 ]; then
+      echo "Échec du push après ${attempt} tentatives." >&2
+      exit 1
+    fi
+    echo "Push échoué (tentative ${attempt}), nouvel essai dans 10s..." >&2
+    attempt=$((attempt + 1))
+    sleep 10
+  done
   echo "Bio mise à jour avec succès dans Git"
+else
+  echo "Rien à pousser."
 fi
