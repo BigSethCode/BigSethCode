@@ -8,8 +8,8 @@
 
 💞️ Je cherche à collaborer sur (Humm)...
 
-📚 **Le mot du jour**
+🧠 **Le saviez-vous ?**
 
-> « Ce qui se conçoit bien s'énonce clairement. — Nicolas Boileau »
+> Le son ne se propage pas dans le vide : l'espace est silencieux.
 
 
